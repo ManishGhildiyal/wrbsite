@@ -104,3 +104,22 @@ document.addEventListener("click", (event) => {
     }
   }
 });
+const elements = document.querySelectorAll('.animate');
+
+window.addEventListener('scroll', () => {
+  elements.forEach((element) => {
+    const rect = element.getBoundingClientRect();
+    if (rect.top < window.innerHeight) {
+      element.classList.add('show');
+    }
+  });
+});
+const navbar = document.querySelector('.navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) { // adjust this value to your desired scroll position
+    navbar.classList.add('fixed');
+  } else {
+    navbar.classList.remove('fixed');
+  }
+});
